@@ -3,15 +3,19 @@ const api = {
     key: "9792f094c713603c46830048bc0e283e"
 }
 
+
 const input = document.querySelector('#input');
+
+
 
 input.addEventListener('keypress', enter);
 
 function enter(e) {
     if (e.keyCode === 13) {
         getInfo(input.value);
-
+        document.querySelector('#container_show').style.display = "block";
     }
+
 }
 
 async function getInfo(data) {
@@ -33,10 +37,10 @@ function displayResult(result) {
     getTodaysDate();
 
     city.textContent = `${result.name},${result.sys.country}`;
-    temperature.innerHTML = `${Math.round(result.main.temp)}<span>C</span>`;
-    feelsLike.innerHTML = `<span>Feels like:</span>${Math.round(result.main.feels_like)}<span>C</span>`;
+    temperature.innerHTML = `${Math.round(result.main.temp)}<span>&#176C</span>`;
+    feelsLike.innerHTML = `<span>Feels like:</span>${Math.round(result.main.feels_like)}<span>&#176C</span>`;
     conditions.textContent = `${result.weather[0].main}`;
-    variation.innerHTML = `<span>Min:</span> ${Math.round(result.main.temp_min)}<span>C</span><span>Max:</span> ${Math.round(result.main.temp_max)}<span>C</span>`;
+    variation.innerHTML = `<span>Min:</span> ${Math.round(result.main.temp_min)}<span>&#176C</span><span> Max:</span> ${Math.round(result.main.temp_max)}<span>&#176C</span>`;
 }
 
 function getTodaysDate() {
