@@ -13,9 +13,17 @@ body {
     min-height: 100vh;
 }
 
+h1 {
+    color: #fff;
+    font-size: 50;
+    font-weight: bold;
+    text-shadow: 5px 5px black;
+}
+
 #header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 30px;
 }
 
@@ -29,6 +37,10 @@ body {
 
 #input:focus {
     background-color: #fff;
+}
+
+#container_show {
+    display: none;
 }
 
 #when-where {
@@ -78,4 +90,58 @@ body {
     color: #fff;
     font-size: 26px;
     font-weight: bold;
+}
+
+@media all and (max-width: 650px) {
+    h1 {
+        font-size: 20px;
+    }
+    #input {
+        width: 150px;
+    }
+    #city {
+        font-size: 30px;
+    }
+    #date {
+        font-size: 15px;
+    }
+    #temperature {
+        font-size: 80px;
+    }
+    #feelsLike {
+        font-size: 15px;
+    }
+    #conditions {
+        font-size: 22px;
+    }
+    #variation {
+        font-size: 16px;
+    }
+}
+
+@media all and (max-width: 350px) {
+    h1 {
+        font-size: 15px;
+    }
+    #input {
+        width: 100px;
+    }
+    #city {
+        font-size: 20px;
+    }
+    #date {
+        font-size: 10px;
+    }
+    #temperature {
+        font-size: 60px;
+    }
+    #feelsLike {
+        font-size: 15px;
+    }
+    #conditions {
+        font-size: 15px;
+    }
+    #variation {
+        font-size: 10px;
+    }
 }
